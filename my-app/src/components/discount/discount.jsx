@@ -6,7 +6,7 @@ const Discount = () => {
     return (
         <form className="discountBlock">
             <label>Скидка</label>
-            <input type="number" />
+            <input type="number" min='0' max='100' value='1' />
             <button>Установить скидку</button>
         </form>);
 }
