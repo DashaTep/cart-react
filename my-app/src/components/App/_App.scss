@@ -1,5 +1,30 @@
 .app {
+    padding: 10px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+label {
+    font-size: 1.05rem;
+}
+
+table {
+    width: 100%;
+    margin-left: 20px;
+    border: 2px solid #845ec2;
+    border-spacing: 0;
+    height: 100%;
+    thead {
+        height: 40px;
+        text-transform: uppercase;
+    }
+    th,
+    td {
+        border: 1px solid #e5e5e5;
+        text-align: center;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
 }

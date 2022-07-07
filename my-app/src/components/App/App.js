@@ -50,17 +50,32 @@ function App() {
     })
   }, [cart])
 
+  
 
   return (
     <div className='app'>
-      <Cart setProduct={setProduct} />
-      <Statistic total={total} />
-      <div>
-        <div>{data.length === 0 ? <h1>Список пуст</h1> : ''}</div>
-        {products}
+      <div className='column'>
+        <Cart setProduct={setProduct} />
+        <Statistic total={total} />
+        <Discount />
       </div>
-      <Discount />
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Удалить</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products}
+        </tbody>
+      </table>
+      <div>{data.length < 1 ? <h1>Список пуст</h1> : ''}</div>
+
     </div>
+
   );
 }
 

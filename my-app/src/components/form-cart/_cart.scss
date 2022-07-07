@@ -2,25 +2,43 @@ form {
     display: flex;
     flex-direction: column;
     width: 400px;
-    border: 2px solid black;
-    padding: 40px;
-    margin: 50px 0 0 50px;
+    border: 2px solid #845ec2;
+    padding: 0 20px 20px;
+    h1 {
+        color: #845ec2;
+    }
     input {
         height: 40px;
         margin: 0 0 20px;
     }
     button {
-        background: black;
+        background: #845ec2;
         height: 40px;
         width: 200px;
         color: #fff;
         font-size: 1rem;
         display: block;
-        margin: 10px auto 0;
+        margin: 5px auto 0;
         border: none;
         cursor: pointer;
     }
     button:disabled {
-        background: gray;
+        background: #e5e5e5;
+    }
+
+    .red {
+        color: red;
+        p {
+            margin-top: 0;
+            padding: 0;
+            display: flex;
+            align-items: end;
+        }
+        svg {
+            fill: red;
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+        }
     }
 }

@@ -1,11 +1,16 @@
 .statistic {
     width: 400px;
-    border: 2px solid black;
-    padding: 40px;
-    margin-top: 50px;
+    border: 2px solid #845ec2;
+    padding: 0 20px 20px;
+    margin-top: 20px;
+    span {
+        color: #845ec2;
+        font-size: 1.5rem;
+    }
+    h1 {
+        color: #845ec2;
+    }
     p {
-        color: red;
-        font-size: 2rem;
-        margin: 0;
+        font-size: 1.1rem;
     }
 }
