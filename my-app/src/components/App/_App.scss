@@ -6,13 +6,18 @@
 label {
     font-size: 1.05rem;
 }
-
+.w-100 {
+    width: 100%;
+}
+.title {
+    margin-left: 30px;
+    color: #845ec2;
+}
 table {
     width: 100%;
     margin-left: 20px;
     border: 1px solid #845ec2;
     border-spacing: 0;
-    height: 100%;
     thead {
         height: 40px;
         text-transform: uppercase;
@@ -43,4 +48,3 @@ button {
 button:disabled {
     background: #e5e5e5;
 }
-

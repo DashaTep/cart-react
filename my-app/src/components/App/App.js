@@ -66,20 +66,21 @@ function App() {
         <Statistic total={total} />
         <Discount setDiscount={setDiscount} />
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Название</th>
-            <th>Цена</th>
-            <th>Удалить</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products}
-        </tbody>
-      </table>
-      <div>{data.length < 1 ? <h1>Список пуст</h1> : ''}</div>
+      <div className='w-100'>{data.length < 1 ? <h1 className='title'>Список пуст</h1> :
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Название</th>
+              <th>Цена</th>
+              <th>Удалить</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products}
+          </tbody>
+        </table>}
+      </div>
     </div>
   );
 }
