@@ -17,47 +17,54 @@ function App() {
         return id !== product.id
       })
     })
-
     const index = data.findIndex(n => n.id === id);
     if (index !== -1) {
       data.splice(index, 1);
     }
-    console.log('del', data)
-
   }
+
 
   const setProduct = (obj) => {
     setCart([...cart, { id: Number(obj.id), title: obj.title, price: Number(obj.price), count: 1 }]);
     data.push(obj)
-    console.log('set', data)
-  }
 
+  }
 
   const products = cart.map((product) => {
     return <Product product={product} key={product.id} deleteProduct={deleteProduct} />;
   })
 
-
   const [total, setTotal] = useState({
     price: cart.reduce((prev, curr) => { return prev + curr.price }, 0),
-    count: cart.reduce((prev, curr) => { return prev + curr.count }, 0)
+    count: cart.reduce((prev, curr) => { return prev + curr.count }, 0),
+    priceWithDiscount: 0,
+    discount: 0
   })
 
   useEffect(() => {
     setTotal({
       price: cart.reduce((prev, curr) => { return prev + curr.price }, 0),
-      count: cart.reduce((prev, curr) => { return prev + curr.count }, 0)
+      count: cart.reduce((prev, curr) => { return prev + curr.count }, 0),
+      discount: 0,
+      priceWithDiscount: 0
     })
   }, [cart])
 
-  
+  const setDiscount = (discount) => {
+    setTotal({
+      discount: discount.discount,
+      priceWithDiscount: total.price - total.price * discount.discount / 100,
+      price: cart.reduce((prev, curr) => { return prev + curr.price }, 0),
+      count: cart.reduce((prev, curr) => { return prev + curr.count }, 0)
+    })
+  }
 
   return (
     <div className='app'>
       <div className='column'>
         <Cart setProduct={setProduct} />
         <Statistic total={total} />
-        <Discount />
+        <Discount setDiscount={setDiscount} />
       </div>
       <table>
         <thead>
@@ -73,9 +80,7 @@ function App() {
         </tbody>
       </table>
       <div>{data.length < 1 ? <h1>Список пуст</h1> : ''}</div>
-
     </div>
-
   );
 }
 

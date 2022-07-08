@@ -1,4 +1,12 @@
-.discountBlock {
+.discount-block {
     margin-top: 20px;
     padding: 0 20px 20px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+
+    button:nth-child(1) {
+        margin-right: 10px;
+    }
 }

@@ -10,7 +10,7 @@ label {
 table {
     width: 100%;
     margin-left: 20px;
-    border: 2px solid #845ec2;
+    border: 1px solid #845ec2;
     border-spacing: 0;
     height: 100%;
     thead {
@@ -27,4 +27,19 @@ table {
 .row {
     display: flex;
     flex-direction: row;
+}
+
+button {
+    background: #845ec2;
+    height: 40px;
+    width: 200px;
+    color: #fff;
+    font-size: 1rem;
+    display: block;
+    margin: 5px auto 0;
+    border: none;
+    cursor: pointer;
+}
+button:disabled {
+    background: #e5e5e5;
 }
