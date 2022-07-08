@@ -23,7 +23,7 @@ const Discount = ({ setDiscount }) => {
     }
 
     return (
-        <form className='discountBlock' onSubmit={handleSubmit(getDiscount)} >
+        <form className='discount-block' onSubmit={handleSubmit(getDiscount)} >
             <h1>Установить скидку</h1>
             <label>Скидка %</label>
             <input defaultValue='' type="number" min='0' max='100' {...register('discount')} />
